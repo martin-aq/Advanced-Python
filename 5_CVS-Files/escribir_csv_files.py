@@ -16,6 +16,6 @@ datos_dict = [
 ]
 
 with open("datos.csv", "w", newline="") as archivo:
-    writer = csv.writer(archivo, delimiter=",")
-    writer.writerow(columnas)
-    writer.writerows(datos_lista)
+    writer = csv.DictWriter(archivo, fieldnames=columnas)
+    writer.writeheader()
+    writer.writerows(datos_dict)
